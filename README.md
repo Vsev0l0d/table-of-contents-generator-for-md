@@ -1,4 +1,4 @@
-# tableOfContentsGeneratorForMd
+# table-of-contents-generator-for-md
 ## Задача
 - Написать генератор оглавления для markdown файлов.
 - Это command-line тула на Java, которая принимает на вход путь к markdown файлу, добавляет к нему в начало оглавление и выводит результат в standard output.
