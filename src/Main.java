@@ -13,6 +13,7 @@ public class Main {
             Stack<Integer> level = new Stack<>();
             String line;
             while((line = reader.readLine()) != null ){
+                if (line.length() < 1) continue;
                 int count = 0;
                 while (line.charAt(count) == '#') count++;
                 if (count < 1) continue;
