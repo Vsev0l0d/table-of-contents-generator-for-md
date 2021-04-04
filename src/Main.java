@@ -7,6 +7,15 @@ import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
+        int limit = -1;
+        if (args.length < 1) {
+            System.out.println("Not enough arguments. \n" +
+                    "Enter file path.");
+            System.exit(0);
+        } else try {
+            limit = Integer.parseInt(args[1]);
+        } catch (Exception ignored){}
+
         String fileName = args[0];
 
         try(BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
@@ -17,6 +26,7 @@ public class Main {
                 int count = 0;
                 while (line.charAt(count) == '#') count++;
                 if (count < 1) continue;
+                if (limit > 0 && count > limit) continue;
                 line = line.substring(count + 1);
 
                 while (level.size() < count) level.push(0);
