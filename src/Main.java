@@ -37,8 +37,7 @@ public class Main {
                 System.out.print(level.peek() + ". [" + line + "]" );
                 System.out.println("(#"+ line.toLowerCase().replaceAll(" ", "-") + ")");
             }
-
-            System.out.println("\n" + new String(Files.readAllBytes(Paths.get(fileName))));
+            Files.readAllLines(Paths.get(fileName)).forEach(System.out::println);
         } catch(IOException e){
             System.out.println(e.getMessage());
         }
